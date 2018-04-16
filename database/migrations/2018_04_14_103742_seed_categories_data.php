@@ -16,15 +16,19 @@ class SeedCategoriesData extends Migration
         $categories = [
             [
                 'name' => '前端',
+                'description' => '前端开发技术文章、前端资源分享推荐等'
             ],
             [
                 'name' => 'PHP',
+                'description' => 'PHP技术分享、开发心得、Bug解决等'
             ],
             [
                 'name' => 'Linux',
+                'description' => '服务端环境安装搭建、工具分享等'
             ],
             [
-                'name' => '其他',
+                'name' => '公告',
+                'description' => '网站公告、通知等重要信息的发布'
             ],
         ];
 
