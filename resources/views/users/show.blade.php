@@ -7,9 +7,7 @@
             <div class="panel panel-default">
                 <div class="panel-body">
                     <div align="center">
-                        <img width="300px" height="300px"
-                                             src="{{ $user->avatar }}"
-                                             alt="" class="thumbnail img-responsive">
+                        <img width="300px" height="300px" src="{{ $user->avatar }}" alt="" class="thumbnail img-responsive">
                         <a class="btn btn-primary btn-block" href="{{ route('users.edit', [$user->id]) }}" id="user-edit-button">
                             <i class="glyphicon glyphicon-edit"></i> 编辑个人资料
                         </a>
