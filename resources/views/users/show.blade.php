@@ -34,25 +34,18 @@
             <div class="panel panel-default">
                 <div class="panel-body">
                     <ul class="nav nav-tabs">
-                        <li class="active">
-                            <a href="#">Ta 的话题</a>
+                        <li class="{{ active_class(if_query('tab', null)) }}">
+                            <a href="{{ route('users.show', $user->id) }}">Ta 的话题</a>
                         </li>
-                        <li>
-                            <a href="#">Ta 的回复</a>
-                        </li>
-                    </ul>
-                    <ul class="list-group">
-                        <li class="list-group-item">
-                            <a href="http://larabbs.test/topics/101"> test </a>
-                            <span class="meta pull-right">0 回复<span> ⋅ </span>1天前</span>
+                        <li class="{{ active_class(if_query('tab', 'replies')) }}">
+                            <a href="{{ route('users.show', [$user->id, 'tab' => 'replies']) }}">Ta 的回复</a>
                         </li>
                     </ul>
-                    <ul class="pagination">
-                        <li class="disabled"><span>«</span></li>
-                        <li class="active"><span>1</span></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#" rel="next">»</a></li>
-                    </ul>
+                    @if (if_query('tab', 'replies'))
+{{--                        @include('users._topics', ['replies' => $user->replies()->with('topic')->recent()->paginate(5)])--}}
+                    @else
+                        @include('users._topics', ['articles' => $user->topics()->recent()->paginate(5)])
+                    @endif
                 </div>
             </div>
         </div>
