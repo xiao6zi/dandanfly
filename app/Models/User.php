@@ -27,7 +27,7 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public function topics()
+    public function articles()
     {
         return $this->hasMany(Article::class);
     }

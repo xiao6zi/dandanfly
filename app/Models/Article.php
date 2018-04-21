@@ -13,7 +13,7 @@ class Article extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function caegory()
+    public function category()
     {
         return $this->belongsTo(Category::class);
     }
@@ -39,8 +39,13 @@ class Article extends Model
         return $query->orderBy('created_at', 'desc');
     }
 
-    public function scopeRecentRepled($query)
+    public function scopeRecentReplied($query)
     {
         return $query->orderBy('updated_at', 'desc');
+    }
+
+    public function link($params = [])
+    {
+        return route('articles.show', array_merge([$this->id, $this->slug], $params));
     }
 }

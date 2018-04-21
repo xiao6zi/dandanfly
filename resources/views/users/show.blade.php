@@ -44,7 +44,7 @@
                     @if (if_query('tab', 'replies'))
 {{--                        @include('users._topics', ['replies' => $user->replies()->with('topic')->recent()->paginate(5)])--}}
                     @else
-                        @include('users._topics', ['articles' => $user->topics()->recent()->paginate(5)])
+                        @include('users._articles', ['articles' => $user->articles()->recent()->paginate(5)])
                     @endif
                 </div>
             </div>
