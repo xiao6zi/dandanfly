@@ -26,6 +26,7 @@ class CreateArticlesTable extends Migration
             $table->text('excerpt')->nullable()->comment('文章摘要');
             $table->string('slug')->nullable()->comment('友好URL字符串');
             $table->timestamps();
+            $table->engine = 'InnoDB';
         });
     }
 
