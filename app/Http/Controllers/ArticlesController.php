@@ -19,8 +19,9 @@ class ArticlesController extends Controller
         return view('articles.index', compact('articles'));
     }
 
-    public function show()
+    public function show(Request $request, Article $article)
     {
-
+        dd($article);exit;
+        return view('articles.show', compact('article'));
     }
 }
