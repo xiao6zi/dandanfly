@@ -13,15 +13,20 @@ class ArticlesController extends Controller
     {
         $this->middleware('auth', ['only' => ['index', 'show']]);
     }
+
     public function index(Request $request, Article $article)
     {
         $articles = $article->withOrder($request->order)->paginate(20);
         return view('articles.index', compact('articles'));
     }
 
-    public function show(Request $request, Article $article)
+    public function show(Article $article)
     {
-        dd($article);exit;
         return view('articles.show', compact('article'));
+    }
+
+    public function create(Request $request)
+    {
+        return view('articles.create_and_edit');
     }
 }
