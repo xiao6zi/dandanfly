@@ -35,7 +35,7 @@
                 </div>
 
                 <div class="topic-body">
-                    {{ $article->body }}
+                    {!! $article->body !!}
                 </div>
 
                 @can('update', $article)

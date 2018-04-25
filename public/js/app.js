@@ -43085,7 +43085,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources\\assets\\js\\components\\ExampleComponent.vue"
+Component.options.__file = "resources/assets/js/components/ExampleComponent.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -43094,9 +43094,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-0ca92eac", Component.options)
+    hotAPI.createRecord("data-v-7168fb6a", Component.options)
   } else {
-    hotAPI.reload("data-v-0ca92eac", Component.options)
+    hotAPI.reload("data-v-7168fb6a", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -43283,7 +43283,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-0ca92eac", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-7168fb6a", module.exports)
   }
 }
 
@@ -43291,7 +43291,7 @@ if (false) {
 /* 42 */
 /***/ (function(module, exports) {
 
-// removed by extract-text-webpack-plugin
+throw new Error("Module build failed: ModuleBuildError: Module build failed: Error: Missing binding /var/www/laradock/www/dandanfly/node_modules/node-sass/vendor/linux-x64-59/binding.node\nNode Sass could not find a binding for your current environment: Linux 64-bit with Node.js 9.x\n\nFound bindings for the following environments:\n  - Windows 64-bit with Node.js 6.x\n\nThis usually happens because your environment has changed since running `npm install`.\nRun `npm rebuild node-sass --force` to build the binding for your current environment.\n    at module.exports (/var/www/laradock/www/dandanfly/node_modules/node-sass/lib/binding.js:15:13)\n    at Object.<anonymous> (/var/www/laradock/www/dandanfly/node_modules/node-sass/lib/index.js:14:35)\n    at Module._compile (internal/modules/cjs/loader.js:654:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:665:10)\n    at Module.load (internal/modules/cjs/loader.js:566:32)\n    at tryModuleLoad (internal/modules/cjs/loader.js:506:12)\n    at Function.Module._load (internal/modules/cjs/loader.js:498:3)\n    at Module.require (internal/modules/cjs/loader.js:598:17)\n    at require (internal/modules/cjs/helpers.js:11:18)\n    at Object.<anonymous> (/var/www/laradock/www/dandanfly/node_modules/sass-loader/lib/loader.js:3:14)\n    at Module._compile (internal/modules/cjs/loader.js:654:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:665:10)\n    at Module.load (internal/modules/cjs/loader.js:566:32)\n    at tryModuleLoad (internal/modules/cjs/loader.js:506:12)\n    at Function.Module._load (internal/modules/cjs/loader.js:498:3)\n    at Module.require (internal/modules/cjs/loader.js:598:17)\n    at require (internal/modules/cjs/helpers.js:11:18)\n    at loadLoader (/var/www/laradock/www/dandanfly/node_modules/loader-runner/lib/loadLoader.js:13:17)\n    at iteratePitchingLoaders (/var/www/laradock/www/dandanfly/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (/var/www/laradock/www/dandanfly/node_modules/loader-runner/lib/LoaderRunner.js:165:10)\n    at /var/www/laradock/www/dandanfly/node_modules/loader-runner/lib/LoaderRunner.js:173:18\n    at loadLoader (/var/www/laradock/www/dandanfly/node_modules/loader-runner/lib/loadLoader.js:36:3)\n    at iteratePitchingLoaders (/var/www/laradock/www/dandanfly/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (/var/www/laradock/www/dandanfly/node_modules/loader-runner/lib/LoaderRunner.js:165:10)\n    at /var/www/laradock/www/dandanfly/node_modules/loader-runner/lib/LoaderRunner.js:173:18\n    at loadLoader (/var/www/laradock/www/dandanfly/node_modules/loader-runner/lib/loadLoader.js:36:3)\n    at iteratePitchingLoaders (/var/www/laradock/www/dandanfly/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (/var/www/laradock/www/dandanfly/node_modules/loader-runner/lib/LoaderRunner.js:165:10)\n    at /var/www/laradock/www/dandanfly/node_modules/loader-runner/lib/LoaderRunner.js:173:18\n    at loadLoader (/var/www/laradock/www/dandanfly/node_modules/loader-runner/lib/loadLoader.js:36:3)\n    at runLoaders (/var/www/laradock/www/dandanfly/node_modules/webpack/lib/NormalModule.js:195:19)\n    at /var/www/laradock/www/dandanfly/node_modules/loader-runner/lib/LoaderRunner.js:364:11\n    at /var/www/laradock/www/dandanfly/node_modules/loader-runner/lib/LoaderRunner.js:170:18\n    at loadLoader (/var/www/laradock/www/dandanfly/node_modules/loader-runner/lib/loadLoader.js:27:11)\n    at iteratePitchingLoaders (/var/www/laradock/www/dandanfly/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (/var/www/laradock/www/dandanfly/node_modules/loader-runner/lib/LoaderRunner.js:165:10)\n    at /var/www/laradock/www/dandanfly/node_modules/loader-runner/lib/LoaderRunner.js:173:18\n    at loadLoader (/var/www/laradock/www/dandanfly/node_modules/loader-runner/lib/loadLoader.js:36:3)\n    at iteratePitchingLoaders (/var/www/laradock/www/dandanfly/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (/var/www/laradock/www/dandanfly/node_modules/loader-runner/lib/LoaderRunner.js:165:10)\n    at /var/www/laradock/www/dandanfly/node_modules/loader-runner/lib/LoaderRunner.js:173:18\n    at loadLoader (/var/www/laradock/www/dandanfly/node_modules/loader-runner/lib/loadLoader.js:36:3)\n    at iteratePitchingLoaders (/var/www/laradock/www/dandanfly/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (/var/www/laradock/www/dandanfly/node_modules/loader-runner/lib/LoaderRunner.js:165:10)\n    at /var/www/laradock/www/dandanfly/node_modules/loader-runner/lib/LoaderRunner.js:173:18\n    at loadLoader (/var/www/laradock/www/dandanfly/node_modules/loader-runner/lib/loadLoader.js:36:3)\n    at iteratePitchingLoaders (/var/www/laradock/www/dandanfly/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at runLoaders (/var/www/laradock/www/dandanfly/node_modules/loader-runner/lib/LoaderRunner.js:362:2)\n    at NormalModule.doBuild (/var/www/laradock/www/dandanfly/node_modules/webpack/lib/NormalModule.js:182:3)\n    at NormalModule.build (/var/www/laradock/www/dandanfly/node_modules/webpack/lib/NormalModule.js:275:15)\n    at Compilation.buildModule (/var/www/laradock/www/dandanfly/node_modules/webpack/lib/Compilation.js:151:10)\n    at moduleFactory.create (/var/www/laradock/www/dandanfly/node_modules/webpack/lib/Compilation.js:454:10)\n    at factory (/var/www/laradock/www/dandanfly/node_modules/webpack/lib/NormalModuleFactory.js:243:5)\n    at applyPluginsAsyncWaterfall (/var/www/laradock/www/dandanfly/node_modules/webpack/lib/NormalModuleFactory.js:94:13)\n    at /var/www/laradock/www/dandanfly/node_modules/tapable/lib/Tapable.js:268:11\n    at NormalModuleFactory.params.normalModuleFactory.plugin (/var/www/laradock/www/dandanfly/node_modules/webpack/lib/CompatibilityPlugin.js:52:5)\n    at NormalModuleFactory.applyPluginsAsyncWaterfall (/var/www/laradock/www/dandanfly/node_modules/tapable/lib/Tapable.js:272:13)\n    at resolver (/var/www/laradock/www/dandanfly/node_modules/webpack/lib/NormalModuleFactory.js:69:10)\n    at process.nextTick (/var/www/laradock/www/dandanfly/node_modules/webpack/lib/NormalModuleFactory.js:196:7)\n    at process._tickCallback (internal/process/next_tick.js:176:11)");
 
 /***/ })
 /******/ ]);
