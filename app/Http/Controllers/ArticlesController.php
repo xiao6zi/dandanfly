@@ -11,9 +11,9 @@ use Auth;
 class ArticlesController extends Controller
 {
 
-    public function __contrust()
+    public function __construct()
     {
-        $this->middleware('auth', ['only' => ['index', 'show']]);
+        $this->middleware('auth', ['except' => ['index', 'show']]);
     }
 
     public function index(Request $request, Article $article)
