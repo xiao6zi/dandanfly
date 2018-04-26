@@ -34,7 +34,7 @@ class ArticleRequest extends FormRequest
             {
                 return [
                     'title'       => 'required|min:2',
-                    'body'        => 'required|min:3',
+                    'body_original'        => 'required|min:3',
                     'category_id' => 'required|numeric',
                 ];
             }
@@ -51,7 +51,7 @@ class ArticleRequest extends FormRequest
     {
         return [
             'title.min' => '标题必须至少两个字符',
-            'body.min' => '文章内容必须至少三个字符',
+            'body_original.min' => '文章内容必须至少三个字符',
         ];
     }
 }

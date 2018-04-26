@@ -27,10 +27,10 @@ class ArticlesController extends Controller
         return view('articles.show', compact('article'));
     }
 
-    public function create(Category $category)
+    public function create(Category $category, Article $article)
     {
         $categories = $category->all();
-        return view('articles.create_and_edit', compact('categories'));
+        return view('articles.create_and_edit', compact('categories', 'article'));
     }
 
     public function store(ArticleRequest $request, Article $article)
@@ -41,14 +41,16 @@ class ArticlesController extends Controller
         return redirect()->to($article->link())->with('success', '文章创建成功');
     }
 
-    public function update()
+    public function edit(Category $category, Article $article)
     {
-
+        $categories = $category->all();
+        return view('articles.create_and_edit', compact('categories', 'article'));
     }
 
-    public function edit()
+    public function update(ArticleRequest $request, Article $article)
     {
-
+        $article->update($request->all());
+        return redirect()->to($article->link())->with('success', '文章修改成功');
     }
 
     public function destroy(Article $article)
