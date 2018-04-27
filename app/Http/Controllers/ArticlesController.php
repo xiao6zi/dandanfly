@@ -43,18 +43,21 @@ class ArticlesController extends Controller
 
     public function edit(Category $category, Article $article)
     {
+        $this->authorize('update', $article);
         $categories = $category->all();
         return view('articles.create_and_edit', compact('categories', 'article'));
     }
 
     public function update(ArticleRequest $request, Article $article)
     {
+        $this->authorize('update', $article);
         $article->update($request->all());
         return redirect()->to($article->link())->with('success', '文章修改成功');
     }
 
     public function destroy(Article $article)
     {
+        $this->authorize('destroy', $article);
         $article->delete();
     }
 }

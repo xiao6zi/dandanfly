@@ -14,7 +14,7 @@ class AddBodyOriginalToArticleTable extends Migration
     public function up()
     {
         Schema::table('articles', function (Blueprint $table) {
-            $table->text('body_original')->nullable();
+            $table->text('body_original')->nullable()->comment('文章原始内容');
         });
     }
 

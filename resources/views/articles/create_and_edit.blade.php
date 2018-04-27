@@ -41,7 +41,7 @@
                         </div>
 
                         <div class="form-group">
-                            <textarea name="body_original" class="form-control" id="editor" rows="3" placeholder="请填入至少三个字符的内容。" required>
+                            <textarea name="body_original" class="form-control" id="editor" rows="15" placeholder="请使用 Markdown 格式书写 ;-)，代码片段黏贴时请注意使用高亮语法。" required>
                                 {{ old('body', $article->body_original ) }}
                             </textarea>
                         </div>
