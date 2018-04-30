@@ -15,4 +15,9 @@ class ArticleObserver
 //        $article->body = clean($convertedHmtl);
     }
 
+    public function saved(Article $article)
+    {
+    	// SEO 优化 slug
+    }
+
 }
