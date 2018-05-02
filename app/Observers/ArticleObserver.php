@@ -4,6 +4,7 @@ namespace App\Observers;
 
 use App\Models\Article;
 use Parsedown;
+use App\Jobs\TranslateSlug;
 
 class ArticleObserver
 {
@@ -18,6 +19,7 @@ class ArticleObserver
     public function saved(Article $article)
     {
     	// SEO 优化 slug
+        TranslateSlug::dispatch($article);
     }
 
 }
