@@ -11,9 +11,8 @@ class ArticleObserver
     public function saving(Article $article)
     {
         $markdownParser = new Parsedown();
-        $convertedHmtl = $markdownParser->setBreaksEnabled(true)->text($article->body_original);
-        $article->body = $convertedHmtl;
-//        $article->body = clean($convertedHmtl);
+        $convertedHtml = $markdownParser->setBreaksEnabled(true)->text($article->body_original);
+        $article->body = $convertedHtml;
     }
 
     public function saved(Article $article)

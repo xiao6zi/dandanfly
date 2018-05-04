@@ -22,11 +22,11 @@ class ArticlePolicy
 
     public function update(User $user, Article $article)
     {
-        return $user->isAuthOf($article);
+        return $user->isAuthorOf($article);
     }
 
-    public function distory(User $user, Article $article)
+    public function destroy(User $user, Article $article)
     {
-        return $user->isAuthOf($article);
+        return $user->isAuthorOf($article);
     }
 }

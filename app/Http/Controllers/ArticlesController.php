@@ -58,8 +58,8 @@ class ArticlesController extends Controller
     public function destroy(Article $article)
     {
 
-        // TODO 删除成功跳转
         $this->authorize('destroy', $article);
         $article->delete();
+        return redirect()->route('articles.index')->with('message', '成功删除！');
     }
 }

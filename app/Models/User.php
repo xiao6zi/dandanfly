@@ -32,7 +32,7 @@ class User extends Authenticatable
         return $this->hasMany(Article::class);
     }
 
-    public function isAuthOf($model)
+    public function isAuthorOf($model)
     {
         return $this->id == $model->user_id;
     }

@@ -45,8 +45,8 @@
                        class="btn btn-default btn-xs pull-left"><i class="glyphicon glyphicon-edit"></i> 编辑
                     </a>
                     <form action="{{ route('articles.destroy', $article->id) }}" method="post">
-                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                        <input type="hidden" name="_method" value="DELETE">
+                        {{ csrf_field() }}
+                        {{ method_field('DELETE') }}
                         <button type="submit" class="btn btn-default btn-xs pull-left" style="margin-left: 6px;">
                             <i class="glyphicon glyphicon-trash"></i> 删除
                         </button>
