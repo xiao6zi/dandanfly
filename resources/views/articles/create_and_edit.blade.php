@@ -64,10 +64,10 @@
     <script type="text/javascript"  src="{{ asset('js/uploader.js') }}"></script>
     <script type="text/javascript"  src="{{ asset('js/simditor.js') }}"></script>
 
-    {{--<script>--}}
-        {{--$(document).ready(function(){--}}
-            {{--var editor = new Simditor({--}}
-                {{--textarea: $('#editor'),--}}
+    <script>
+        $(document).ready(function(){
+            var editor = new Simditor({
+                textarea: $('#editor'),
                 {{--upload: {--}}
                     {{--url: '{{ route('topics.upload_image') }}',--}}
                     {{--params: { _token: '{{ csrf_token() }}' },--}}
@@ -75,9 +75,9 @@
                     {{--connectionCount: 3,--}}
                     {{--leaveConfirm: '文件上传中，关闭此页面将取消上传。'--}}
                 {{--},--}}
-{{--//                pasteImage: true,--}}
-            {{--});--}}
-        {{--});--}}
-    {{--</script>--}}
+//                pasteImage: true,
+            });
+        });
+    </script>
 
 @stop
