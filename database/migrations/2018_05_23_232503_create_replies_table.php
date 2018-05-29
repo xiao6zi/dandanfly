@@ -16,7 +16,7 @@ class CreateRepliesTable extends Migration
         Schema::create('replies', function (Blueprint $table) {
             $table->increments('id');
             $table->string('source')->nullable()->index()->comment('评论来源：ios, android, pc');
-            $table->integer('topic_id')->unsigned()->default(0)->index()->comment('文章ID');
+            $table->integer('article_id')->unsigned()->default(0)->index()->comment('文章ID');
             $table->integer('user_id')->unsigned()->default(0)->index()->comment('用户ID');
             $table->enum('is_blocked', ['yes',  'no'])->default('no')->index()->comment('是否已屏蔽');
             $table->integer('vote_count')->default(0)->index()->comment('点赞次数');
