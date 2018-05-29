@@ -12,7 +12,7 @@ class ArticleObserver
     {
         $markdownParser = new Parsedown();
         $convertedHtml = $markdownParser->setBreaksEnabled(true)->text($article->body_original);
-        $article->body = $convertedHtml;
+        $article->body = clean($convertedHtml);
     }
 
     public function saved(Article $article)
