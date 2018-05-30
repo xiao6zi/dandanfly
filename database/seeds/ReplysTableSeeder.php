@@ -5,7 +5,7 @@ use App\Models\User;
 use App\Models\Article;
 use App\Models\Reply;
 
-class RepliesTableSeeder extends Seeder
+class ReplysTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -27,10 +27,10 @@ class RepliesTableSeeder extends Seeder
         $replies = factory(Reply::class)
             ->times(1000)
             ->make()
-            ->each(function ($replies, $index) use ($faker, $user_ids, $articles_ids, $source) {
-                $replies->user_id = $faker->randomElement($user_ids);
-                $replies->article_id = $faker->randomElement($articles_ids);
-                $replies->source = $faker->randomElement($source);
+            ->each(function ($reply, $index) use ($faker, $user_ids, $articles_ids, $source) {
+                $reply->user_id = $faker->randomElement($user_ids);
+                $reply->article_id = $faker->randomElement($articles_ids);
+                $reply->source = $faker->randomElement($source);
             });
 
 

@@ -14,13 +14,12 @@ use Faker\Generator as Faker;
 */
 
 $factory->define(App\Models\Reply::class, function (Faker $faker) {
-    $sentence = $faker->sentence();
-    $updated_at = $faker->dateTimeThisMonth();
-    $created_at = $faker->dateTimeThisMonth($updated_at);
+    // 随机取一个月以内的时间
+    $time = $faker->dateTimeThisMonth();
 
     return [
-        'body' => $faker->text(),
-        'updated_at' => $updated_at,
-        'created_at' => $created_at
+        'body' => $faker->sentence(),
+        'updated_at' => $time,
+        'created_at' => $time
     ];
 });
