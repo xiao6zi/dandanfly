@@ -1398,7 +1398,7 @@ th {
 
 html {
   font-size: 10px;
-  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 body {
@@ -7884,7 +7884,7 @@ button.close {
   color: #fff;
   text-align: center;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
-  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0);
 }
 
 .carousel-control.left {
@@ -7973,7 +7973,7 @@ button.close {
   border-radius: 10px;
   cursor: pointer;
   background-color: #000 \9;
-  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0);
 }
 
 .carousel-indicators .active {
@@ -8401,6 +8401,45 @@ body {
 
 .footer .container p a {
   color: inherit;
+}
+
+/* User profile page */
+
+/* User profile page */
+
+.users-show-page .user-info .thumbnail {
+  margin-bottom: 0px;
+}
+
+.users-show-page .nav-tabs {
+  margin-bottom: 20px;
+}
+
+.users-show-page .nav-tabs > li.active > a {
+  background-color: #fff;
+}
+
+.users-show-page .list-group .list-group-item {
+  border: none;
+  margin-bottom: 0px;
+  border-bottom: 1px solid #efefef;
+}
+
+.users-show-page .list-group .list-group-item .meta {
+  color: #b3b3b3;
+}
+
+.users-show-page .pagination {
+  margin: 12px 0;
+}
+
+.users-show-page .meta {
+  font-size: .9em;
+  color: #b3b3b3;
+}
+
+.users-show-page .reply-content {
+  margin: 6px 0;
 }
 
 /* User register page */

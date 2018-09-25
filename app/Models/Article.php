@@ -18,6 +18,11 @@ class Article extends Model
         return $this->belongsTo(Category::class);
     }
 
+    public function replies()
+    {
+        return $this->hasmany(Reply::class);
+    }
+
     public function scopeWithOrder($query, $order)
     {
         switch($order) {
