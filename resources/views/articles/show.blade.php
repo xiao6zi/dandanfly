@@ -15,7 +15,7 @@
                 <hr>
                 <div class="media">
                     <div align="center">
-                        <a href="http://larabbs.test/users/5">
+                        <a href="{{ route('users.show', [$article->user_id]) }}">
                             <img class="thumbnail img-responsive" src="{{ $article->user->avatar }}" width="300px" height="300px">
                         </a>
                     </div>
@@ -59,29 +59,8 @@
 
         <div class="panel panel-default topic-reply">
             <div class="panel-body">
-                <div class="reply-list">
-                    <div class=" media" name="reply37" id="reply37">
-                        <div class="avatar pull-left">
-                            <a href="http://larabbs.test/users/2"> <img class="media-object img-thumbnail"
-                                                                        alt="Carmel Hilll"
-                                                                        src="https://fsdhubcdn.phphub.org/uploads/images/201710/14/1/s5ehp11z6s.png?imageView2/1/w/200/h/200"
-                                                                        style="width:48px;height:48px;"/> </a>
-                        </div>
-
-                        <div class="infos">
-                            <div class="media-heading">
-                                <a href="http://larabbs.test/users/2" title="Carmel Hilll"> Carmel Hilll </a>
-                                <span> •  </span> <span class="meta" title="2018-03-29 09:43:44">3周前</span>
-
-
-                            </div>
-                            <div class="reply-content">
-                                Molestiae ratione soluta ea et ex maiores veritatis expedita.
-                            </div>
-                        </div>
-                    </div>
-                    <hr>
-                </div>
+                @includeWhen(Auth::check(), 'articles._reply_box', ['article' => $article])
+                @include('articles._reply_list', ['replies' => $article->replies()->with('user')->get()])
             </div>
         </div>
     </div>
