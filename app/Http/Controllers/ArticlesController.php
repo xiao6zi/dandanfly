@@ -7,6 +7,7 @@ use App\Http\Requests\ArticleRequest;
 use App\Models\Category;
 use App\Models\Article;
 use App\Models\User;
+use App\Models\Link;
 use Auth;
 
 class ArticlesController extends Controller
@@ -17,11 +18,12 @@ class ArticlesController extends Controller
         $this->middleware('auth', ['except' => ['index', 'show']]);
     }
 
-    public function index(Request $request, Article $article, User $user)
+    public function index(Request $request, Article $article, User $user, Link $link)
     {
         $articles = $article->withOrder($request->order)->paginate(20);
         $active_users = $user->getActiveUsers();
-        return view('articles.index', compact('articles', 'active_users'));
+        $links = $link->getAllCached();
+        return view('articles.index', compact('articles', 'active_users', 'links'));
     }
 
     public function show(Article $article)
