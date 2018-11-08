@@ -8405,8 +8405,6 @@ body {
 
 /* User profile page */
 
-/* User profile page */
-
 .users-show-page .user-info .thumbnail {
   margin-bottom: 0px;
 }
@@ -8493,5 +8491,33 @@ body {
   margin-bottom: 12px;
   border: 0;
   border-top: 1px solid #dcebf5;
+}
+
+/* User profile page */
+
+.users-show-page .meta {
+  font-size: .9em;
+  color: #b3b3b3;
+}
+
+.users-show-page .reply-content {
+  margin: 6px 0;
+}
+
+/* Sidebar */
+
+.sidebar .panel-body {
+  padding: 12px;
+}
+
+.sidebar hr {
+  margin-top: 8px;
+  margin-bottom: 10px;
+}
+
+.sidebar .active-users a.media {
+  color: #797878;
+  line-height: 26px;
+  font-size: 0.9em;
 }
 
