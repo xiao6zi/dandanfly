@@ -55,7 +55,6 @@ body {
 }
 
 /* User profile page */
-/* User profile page */
 .users-show-page {
   .user-info {
     .thumbnail {
@@ -145,5 +144,26 @@ body {
   }
   .reply-content {
     margin: 6px 0;
+  }
+}
+
+/* Sidebar */
+
+.sidebar {
+  .panel-body {
+    padding: 12px;
+  }
+
+  hr {
+    margin-top: 8px;
+    margin-bottom: 10px;
+  }
+
+  .active-users {
+    a.media {
+      color: #797878;
+      line-height: 26px;
+      font-size: 0.9em;
+    }
   }
 }

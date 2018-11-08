@@ -22,3 +22,7 @@ Route::resource('categories', 'CategoriesController', ['only' => ['show']]);
 Route::resource('articles', 'ArticlesController', ['only' => ['index', 'show', 'create', 'store', 'update', 'edit', 'destroy']]);
 
 Route::resource('replies', 'RepliesController', ['only' => ['store', 'destroy']]);
+
+
+// 平时调试用
+Route::get('/test', 'testController@test')->name('test');

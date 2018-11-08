@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\ArticleRequest;
 use App\Models\Category;
 use App\Models\Article;
+use App\Models\User;
 use Auth;
 
 class ArticlesController extends Controller
@@ -16,10 +17,11 @@ class ArticlesController extends Controller
         $this->middleware('auth', ['except' => ['index', 'show']]);
     }
 
-    public function index(Request $request, Article $article)
+    public function index(Request $request, Article $article, User $user)
     {
         $articles = $article->withOrder($request->order)->paginate(20);
-        return view('articles.index', compact('articles'));
+        $active_users = $user->getActiveUsers();
+        return view('articles.index', compact('articles', 'active_users'));
     }
 
     public function show(Article $article)
