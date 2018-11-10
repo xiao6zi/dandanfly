@@ -4,8 +4,6 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
-use App\Observers\ArticleObserver;
-use App\Observers\ReplyObserver;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -16,9 +14,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        \App\Models\Article::observe(ArticleObserver::class);
-        \App\Models\Reply::observe(ReplyObserver::class);
+        \App\Models\Article::observe(\App\Observers\ArticleObserver::class);
+        \App\Models\Reply::observe(\App\Observers\ReplyObserver::class);
         \App\Models\Link::observe(\App\Observers\LinkObserver::class);
+        \App\Models\User::observe(\App\Observers\UserObserver::class);
 
         \Carbon\Carbon::setLocale('zh');
         Schema::defaultStringLength(191);

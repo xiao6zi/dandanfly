@@ -14,20 +14,11 @@ class UsersTableSeeder extends Seeder
     {
         $faker = app(Faker\Generator::class);
 
-        $avatars = [
-            'https://fsdhubcdn.phphub.org/uploads/images/201710/14/1/s5ehp11z6s.png?imageView2/1/w/200/h/200',
-            'https://fsdhubcdn.phphub.org/uploads/images/201710/14/1/Lhd1SHqu86.png?imageView2/1/w/200/h/200',
-            'https://fsdhubcdn.phphub.org/uploads/images/201710/14/1/LOnMrqbHJn.png?imageView2/1/w/200/h/200',
-            'https://fsdhubcdn.phphub.org/uploads/images/201710/14/1/xAuDMxteQy.png?imageView2/1/w/200/h/200',
-            'https://fsdhubcdn.phphub.org/uploads/images/201710/14/1/ZqM7iaP4CR.png?imageView2/1/w/200/h/200',
-            'https://fsdhubcdn.phphub.org/uploads/images/201710/14/1/NDnzMutoxX.png?imageView2/1/w/200/h/200',
-        ];
-
         $users = factory(User::class)
             ->times(10)
             ->make()
-            ->each(function ($user, $index) use ($faker, $avatars) {
-               $user->avatar = $faker->randomElement($avatars);
+            ->each(function ($user, $index) use ($faker) {
+               $user->avatar = get_gravatar($user->email);
             });
 
         $user_array = $users->makeVisible(['password', 'remember_token'])->toArray();
@@ -36,7 +27,7 @@ class UsersTableSeeder extends Seeder
         $user = User::find(1);
         $user->name = 'xiao6zi';
         $user->email = 'xiao6zi@qq.com';
-        $user->avatar = 'https://fsdhubcdn.phphub.org/uploads/images/201710/14/1/ZqM7iaP4CR.png?imageView2/1/w/200/h/200';
+        $user->avatar = 'https://i.loli.net/2018/11/10/5be6ebbcc4f30.jpg';
         $user->save();
     }
 }
