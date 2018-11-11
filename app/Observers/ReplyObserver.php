@@ -3,7 +3,7 @@
 namespace App\Observers;
 
 use App\Models\Reply;
-
+use App\Notifications\ArticleReplied;
 
 class ReplyObserver
 {
@@ -14,7 +14,10 @@ class ReplyObserver
 
     public function created(Reply $reply)
     {
+        $article = $reply->article;
         $reply->article->increment('reply_count', 1);
+
+        $article->user->notify(new ArticleReplied($reply));
     }
 
     public function creating(Reply $reply)

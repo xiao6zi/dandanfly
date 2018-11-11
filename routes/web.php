@@ -23,6 +23,7 @@ Route::resource('articles', 'ArticlesController', ['only' => ['index', 'show', '
 
 Route::resource('replies', 'RepliesController', ['only' => ['store', 'destroy']]);
 
+Route::get('/notifications', 'NotificationsController@index')->name('notifications.index');
 
 // 平时调试用
 Route::get('/test', 'testController@test')->name('test');
