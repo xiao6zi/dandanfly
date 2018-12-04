@@ -9,6 +9,7 @@
         "barryvdh/laravel-debugbar": "^3.2",
         "barryvdh/laravel-ide-helper": "^2.4",
         "dingo/api": "2.0.0-alpha1",
+        "doctrine/dbal": "^2.9",
         "erusev/parsedown": "^1.7",
         "fideloper/proxy": "~3.3",
         "guzzlehttp/guzzle": "^6.3",
