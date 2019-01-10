@@ -8,9 +8,10 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>@yield('title', 'DandanFly') - 蛋蛋飞博客系统</title>
+    <title>@yield('title', 'DandanFly') - 蛋蛋飞论坛</title>
 
     <!-- Styles -->
+    <link href="//at.alicdn.com/t/font_980583_lu1gmch2ikg.css" rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     @yield('styles')
 </head>

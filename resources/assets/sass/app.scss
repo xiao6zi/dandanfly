@@ -16,7 +16,7 @@ body {
   border-color: #e7e7e7;
   background-color: #fff;
   box-shadow: 0px 1px 11px 2px rgba(42, 42, 42, 0.1);
-  border-top: 4px solid #00b5ad;
+  border-top: 4px solid #2a88bd;
   margin-bottom: 40px;
   margin-top: 0px;
 }
@@ -102,6 +102,15 @@ body {
     margin-bottom: 0px;
     margin-top: 10px;
     cursor: pointer;
+  }
+}
+
+.login-page {
+  a {
+    padding-left: 0;
+  }
+  .text-muted {
+    color: #999;
   }
 }
 
