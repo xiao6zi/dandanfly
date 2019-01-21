@@ -8406,7 +8406,7 @@ body {
 /* User profile page */
 
 .users-show-page .user-info .thumbnail {
-  margin-bottom: 0px;
+  margin-bottom: 15px;
 }
 
 .users-show-page .nav-tabs {
