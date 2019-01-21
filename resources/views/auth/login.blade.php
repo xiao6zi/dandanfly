@@ -39,11 +39,11 @@
                                 </a>
                             </div>
                             <div class="row">
-                                {{--<div class="col-xs-6 col-sm-6 col-md-6">--}}
-                                    {{--<a class="btn btn-link" href="{{ route('socials.authorizations.login', ['type' => 'github']) }}">--}}
-                                        {{--<i class="iconfont icon-github"></i> 使用Github登录--}}
-                                    {{--</a>--}}
-                                {{--</div>--}}
+                                <div class="col-xs-6 col-sm-6 col-md-6">
+                                    <a class="btn btn-link" href="{{ route('login.github') }}">
+                                        <i class="iconfont icon-github"></i> 使用Github登录
+                                    </a>
+                                </div>
                                 {{--<div class="col-xs-6 col-sm-6 col-md-6">--}}
                                     {{--<a class="btn btn-link pull-right" href="{{ route('socials.authorizations.login', ['type' => 'wechat']) }}">--}}
                                         {{--<i class="iconfont icon-wechat"></i> 使用微信登录--}}

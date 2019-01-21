@@ -25,5 +25,8 @@ Route::resource('replies', 'RepliesController', ['only' => ['store', 'destroy']]
 
 Route::get('/notifications', 'NotificationsController@index')->name('notifications.index');
 
+Route::get('login/github', 'Auth\LoginController@redirectToProvider')->name('login.github');
+Route::get('login/github/callback', 'Auth\LoginController@handleProviderCallback');
+
 // 平时调试用
 Route::get('/test', 'testController@test')->name('test');
