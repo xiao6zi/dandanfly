@@ -10,7 +10,7 @@ class ImageUploadHandler
 
     public function save($file, $folder, $file_prefix, $max_width = false)
     {
-        $folder_name = "uplodes/images/$folder/" . date('Ym', time()) . '/' . date('d', time()) . '/';
+        $folder_name = "uploads/images/$folder/" . date('Ym', time()) . '/' . date('d', time()) . '/';
 
         $upload_path = public_path() . '/' . $folder_name;
 
