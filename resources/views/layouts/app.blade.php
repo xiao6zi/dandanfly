@@ -12,7 +12,7 @@
 
     <!-- Styles -->
     <link href="//at.alicdn.com/t/font_980583_lu1gmch2ikg.css" rel="stylesheet">
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ mix('css/app.css') }}" rel="stylesheet">
     @yield('styles')
 </head>
 
@@ -31,7 +31,7 @@
 </div>
 
 <!-- Scripts -->
-<script src="{{ asset('js/app.js') }}"></script>
+<script src="{{ mix('js/app.js') }}"></script>
 @yield('scripts')
 </body>
 </html>
