@@ -28,5 +28,7 @@ Route::get('/notifications', 'NotificationsController@index')->name('notificatio
 Route::get('login/github', 'Auth\LoginController@redirectToProvider')->name('login.github');
 Route::get('login/github/callback', 'Auth\LoginController@handleProviderCallback');
 
+Route::post('articles/upload', 'ArticlesController@upload')->name('articles.upload');
+
 // 平时调试用
 Route::get('/test', 'testController@test')->name('test');

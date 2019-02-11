@@ -64,6 +64,65 @@
     <script>
         $(document).ready(function(){
           var simplemde = new SimpleMDE({ element: $("#editor")[0] });
+			simplemde.codemirror.on('drop', function (editor, e) {
+				if (!e.dataTransfer && e.dataTransfer.files) {
+					alert('浏览器不支持此操作');
+					return;
+				}
+				var dataList = e.dataTransfer.files;
+				// 处理图片批量上传
+				batchUpload(dataList, editor);
+			});
+
+			simplemde.codemirror.on('paste', function (editor, e) {
+				if (!e.clipboardData && e.clipboardData.files) {
+					alert('浏览器不支持此操作');
+					return;
+				}
+				var dataList = e.clipboardData.items;
+				batchUpload(dataList, editor);
+			});
+
+			// 处理图片批量上传
+			function batchUpload(dataList) {
+				for (let i = 0; i < dataList.length; i++) {
+					if (dataList[i].type.indexOf('image') === -1) {
+						continue;
+					}
+					let formData = new FormData();
+					formData.append('image', dataList[i]);
+					fileUpload(formData);
+				}
+			}
+
+			// ajax上传图片
+			function fileUpload(formData) {
+				simplemde.value(simplemde.value() + "\n 图片上传中。。。");
+				formData.append('_token', '{{ csrf_token() }}');
+				$.ajax({
+					url: 'upload',
+					type: 'POST',
+					cache: false,
+					data: formData,
+					dataType: 'json',
+					timeout: 5000,
+					processData: false,
+					contentType: false,
+					xhrFields: {
+						withCredentials: true
+					},
+					success: function (data) {
+						// 将返回的图片url追加到编辑器内
+						simplemde.value(simplemde.value() .substring(0, simplemde.value() .lastIndexOf("\n")));
+						simplemde.value(simplemde.value() + "\n ![file](" + data.url + ") \n");
+					},
+					error: function (XMLHttpRequest, textStatus, errorThrown) {
+						simplemde.value(simplemde.value() .substring(0, simplemde.value() .lastIndexOf("\n")));
+						simplemde.value(simplemde.value() + "\n 上传图片出错了!");
+						alert("上传图片出错了");
+					}
+				});
+			}
         });
     </script>
 

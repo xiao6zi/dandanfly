@@ -66,4 +66,12 @@ class ArticlesController extends Controller
         $article->delete();
         return redirect()->route('articles.index')->with('message', '成功删除！');
     }
+
+    public function upload()
+    {
+        return response()->json([
+            'name' => 'Abigail',
+            'url' => 'https://i.loli.net/2019/02/11/5c613cee06480.png'
+        ]);
+    }
 }
