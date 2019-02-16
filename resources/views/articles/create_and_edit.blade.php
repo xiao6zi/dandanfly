@@ -75,7 +75,7 @@
 			});
 
 			simplemde.codemirror.on('paste', function (editor, e) {
-				if (!e.clipboardData && e.clipboardData.files) {
+				if (!e.clipboardData && e.clipboardData.items) {
 					alert('浏览器不支持此操作');
 					return;
 				}
@@ -90,7 +90,7 @@
 						continue;
 					}
 					let formData = new FormData();
-					formData.append('image', dataList[i]);
+					formData.append('image', dataList[i].getAsFile());
 					fileUpload(formData);
 				}
 			}
@@ -119,7 +119,6 @@
 					error: function (XMLHttpRequest, textStatus, errorThrown) {
 						simplemde.value(simplemde.value() .substring(0, simplemde.value() .lastIndexOf("\n")));
 						simplemde.value(simplemde.value() + "\n 上传图片出错了!");
-						alert("上传图片出错了");
 					}
 				});
 			}

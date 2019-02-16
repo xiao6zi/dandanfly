@@ -9,6 +9,7 @@ use App\Models\Article;
 use App\Models\User;
 use App\Models\Link;
 use Auth;
+use Illuminate\Support\Facades\Storage;
 
 class ArticlesController extends Controller
 {
@@ -69,9 +70,24 @@ class ArticlesController extends Controller
 
     public function upload()
     {
-        return response()->json([
-            'name' => 'Abigail',
-            'url' => 'https://i.loli.net/2019/02/11/5c613cee06480.png'
-        ]);
+        $disk = Storage::disk('qiniu');
+
+        $fileContents = file_get_contents($_FILES['image']['tmp_name']);
+        $ext = array_search($_FILES['image']['type'], [
+            'jpg' => 'image/jpeg',
+            'png' => 'image/png',
+            'gif' => 'image/gif',
+        ], true);
+        $name = date('YmdHis') . str_random(6) . '.' . $ext;
+
+        $result = $disk->put($name, $fileContents);
+
+        if ($result) {
+            $url = $disk->getUrl($name);
+            return response()->json(['name' => $name, 'url' => $url]);
+        } else {
+            return response()->json('上传失败');
+        }
+
     }
 }
