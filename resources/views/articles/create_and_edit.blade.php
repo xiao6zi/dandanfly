@@ -95,9 +95,16 @@
 				}
 			}
 
+			function insertValue(value) {
+				simplemde.codemirror.replaceSelection(value);
+				return this;
+			}
+
 			// ajax上传图片
 			function fileUpload(formData) {
-				simplemde.value(simplemde.value() + "\n 图片上传中。。。");
+
+				insertValue("\n 图片上传中。。。");
+				var cursor = simplemde.codemirror.getCursor();
 				formData.append('_token', '{{ csrf_token() }}');
 				$.ajax({
 					url: 'upload',
@@ -112,13 +119,12 @@
 						withCredentials: true
 					},
 					success: function (data) {
-						// 将返回的图片url追加到编辑器内
-						simplemde.value(simplemde.value() .substring(0, simplemde.value() .lastIndexOf("\n")));
-						simplemde.value(simplemde.value() + "\n ![file](" + data.url + ") \n");
+						simplemde.codemirror.setSelection({line:cursor.line, ch:0}, {line:cursor.line, ch:10});
+						insertValue("![file](" + data.url + ") \n");
 					},
 					error: function (XMLHttpRequest, textStatus, errorThrown) {
-						simplemde.value(simplemde.value() .substring(0, simplemde.value() .lastIndexOf("\n")));
-						simplemde.value(simplemde.value() + "\n 上传图片出错了!");
+						simplemde.codemirror.setSelection({line:cursor.line, ch:0}, {line:cursor.line, ch:10});
+						insertValue("上传图片出错了! \n");
 					}
 				});
 			}
