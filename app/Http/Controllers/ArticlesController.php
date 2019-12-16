@@ -40,6 +40,7 @@ class ArticlesController extends Controller
 
     public function store(ArticleRequest $request, Article $article)
     {
+        // test git-flow
         $article->fill($request->all());
         $article->user_id = Auth::id();
         $article->save();
