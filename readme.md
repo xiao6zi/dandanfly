@@ -46,7 +46,7 @@ php artisan migrate
 
 #### 7. Download composer extension package
 ```shell
-comoposer install   --optimize-autoloader
+comopser install   --optimize-autoloader
 ```
 
 #### 8. Download front JS
